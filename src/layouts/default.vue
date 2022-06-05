@@ -18,13 +18,6 @@
           <p class="ml-4">ニュース</p>
         </NuxtLink>
       </li>
-      <li class="">
-        <!-- アクティブリンク :class="{'bg-lightGreen': $route.name === 'sample'}" -->
-        <NuxtLink class="rounded-lg p-4 flex items-center hover:opacity-80 duration-300" to="/sample" :class="{'bg-lightGreen': $route.name === 'sample'}">
-          <span class="material-icons">face</span>
-          <p class="ml-4">サンプル</p>
-        </NuxtLink>
-      </li>
     </ul>
   </aside>
 
