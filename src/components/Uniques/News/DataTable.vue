@@ -17,16 +17,21 @@
       :key="item.id"
       class="border-b border-lightGray py-2 pl-4 cursor-pointer"
       >
-        <div class="text-xs grid gap-2 grid-cols-12 items-center">
+        <NuxtLink class="text-xs grid gap-2 grid-cols-12 items-center" :to="`/news/${item.id}`">
           <div class="flex col-span-1">
-            <span class="text-white py-2 px-4 bg-orange rounded-lg truncate">公開中</span>
+            <span
+              class="text-white py-2 px-4 rounded-lg truncate"
+              :class="[item.public ? 'bg-orange' : 'bg-blue']"
+            >
+              {{item.public ? '公開中' : '下書き'}}
+            </span>
           </div>
           <span class="col-span-1 truncate">{{item.id}}</span>
           <span class="col-span-3 truncate">{{item.title}}</span>
           <span class="col-span-3 truncate">{{item.text_contents}}</span>
           <span class="col-span-2 truncate">{{item.created_at}}</span>
           <span class="col-span-2 truncate">{{item.update_at}}</span>
-        </div>
+        </NuxtLink>
       </li><!-- /.news item -->
     </ul><!-- /.news list -->
   </div><!-- /.news body -->
@@ -35,6 +40,7 @@
 <script lang="ts">
 import { Vue, Component, Prop } from 'nuxt-property-decorator'
 import { News } from '~/types'
+
 @Component({})
 export default class extends Vue {
   @Prop({ type: Array, required: false, default: () => [] })

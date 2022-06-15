@@ -5,7 +5,11 @@
 
       <!-- 新規登録ボタン -->
       <div class="flex justify-end items-center mt-10">
-        <BaseButton color="lightGreen" prepend-icon="add">新規登録</BaseButton>
+        <BaseButton
+          color="lightGreen"
+          prepend-icon="add"
+          @click="$router.push('/news/add')"
+          >新規登録</BaseButton>
       </div><!-- /.add content -->
 
       <!-- 登録データ表示 -->
