@@ -1,0 +1,3 @@
+<template>
+  <PagesNewsEdit></PagesNewsEdit>
+</template>
