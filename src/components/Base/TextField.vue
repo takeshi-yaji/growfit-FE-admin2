@@ -1,6 +1,13 @@
 <template>
   <div class="">
-    <input class="border border-gray rounded-lg w-full h-12 px-3 outline-none" type="text" :value="value" @input="onInput" name="" id="">
+    <input
+      class="border border-gray rounded-lg w-full h-12 px-3 outline-none"
+      type="text"
+      :value="value"
+      @input="onInput"
+      name="" id=""
+      placeholder=""
+    >
   </div>
 </template>
 
@@ -11,6 +18,9 @@ import { Vue, Component, Emit, Prop } from 'nuxt-property-decorator'
 export default class extends Vue {
   @Prop({ type: String, required: false, default: '' })
   value!: string
+
+  @Prop({ type: String, required: false, default: '' })
+  placeholder!: string
 
   @Emit('input')
   onInput(event: InputEvent) {

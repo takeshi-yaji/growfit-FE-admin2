@@ -1,6 +1,6 @@
 <template>
   <button
-    class="flex items-center px-4 py-2 rounded-lg hover:opacity-80 duration-300"
+    class="flex justify-center items-center px-4 py-2 rounded-lg hover:opacity-80 duration-300"
     :class="{
       'hover:bg-gray-100': color === '',
       'bg-lightGreen text-white hover:opacity-80' :color === 'lightGreen',
