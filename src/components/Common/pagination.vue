@@ -56,18 +56,22 @@ import { Common } from '~/types'
 export default class extends Vue {
   @Prop({ type: Object, required: false, default: () => {} })
   pagination!: Common.Pagination
+
   @Emit('click:first')
   onClickFirst(): number {
     return 1
   }
+
   @Emit('click:last')
   onClickLast(): number {
     return this.pagination.lastPage
   }
+
   @Emit('click:next')
   onClickNext(): number {
     return this.pagination.page < this.pagination.lastPage ? this.pagination.page + 1 : this.pagination.page
   }
+  
   @Emit('click:prev')
   onClickPrev(): number {
     return this.pagination.page > 1 ? this.pagination.page - 1 : this.pagination.page

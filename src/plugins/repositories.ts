@@ -1,5 +1,7 @@
 import { Context } from '@nuxt/types'
 import NewsRepository from '~/repositories/news'
+// Loginを追加
+import LoginRepository from '~/repositories/login'
 
 export type Repositories = {
   [key: string]: any
@@ -11,6 +13,8 @@ export default (
 ) => {
   const repositories: Repositories = {
     news: NewsRepository($axios),
+    // ここも追加
+    login: LoginRepository($axios),
   }
   inject('repositories', repositories)
 }
