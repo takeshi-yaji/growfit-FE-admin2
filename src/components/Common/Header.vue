@@ -10,12 +10,17 @@
 
 <script lang="ts">
 import { Vue, Component, Emit, Prop } from 'nuxt-property-decorator'
+
 @Component({})
+
 export default class extends Vue {
   @Prop({ type: String, required: false, default: '' })
   title!: string
-  
+
   @Emit('click:logout')
-  onClickLogout() {}
+  onClickLogout() {
+    localStorage.removeItem('access_token')
+    this.$router.push('/login')
+  }
 }
 </script>
